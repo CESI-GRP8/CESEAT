@@ -10,3 +10,6 @@
 [submodule "Payment"]
 	path = Payment
 	url = https://github.com/CESI-GRP8/Payment.git
+[submodule "Shipping"]
+	path = Shipping
+	url = https://github.com/CESI-GRP8/Shipping.git
