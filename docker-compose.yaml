@@ -3,32 +3,32 @@ services:
     container_name: gateway
     image: nginx:latest
     networks:
-      - authentication
+      - account
     ports:
       - 80:80
     volumes:
       - ./gateway/nginx.conf:/etc/nginx/nginx.conf
     depends_on:
-      - authentication
+      - account
 
-  authentication:
-    container_name: authentication
+  account:
+    container_name: account
     build:
-      context: ./authentication
+      context: ./account
       dockerfile: Dockerfile
     networks:
-      - authentication
+      - account
   
-  authentication-db:
-    container_name: authentication-db
+  account-db:
+    container_name: account-db
     image: mongo:latest
     networks:
-      - authentication
+      - account
     volumes:
-      - ./authentication/data:/data/db
+      - ./account/data:/data/db
     environment:
       MONGO_INITDB_ROOT_USERNAME: cesi
       MONGO_INITDB_ROOT_PASSWORD: cesi
       
 networks:
-  authentication:
+  account:
