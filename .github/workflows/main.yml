@@ -19,9 +19,9 @@ jobs:
         with:
           node-version: 21
       
-      - name: Install dependancises
-        run: npm ci
-      - run: npm build
+      #- name: Install dependancises
+      #  run: npm ci
+      #- run: npm build
 
       #run les test unitaire de notre code
       - run: npm test
