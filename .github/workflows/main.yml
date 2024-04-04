@@ -1,18 +1,15 @@
 name: Continous Integration
 
 on:
-  push:
-    branches:
-      - dev
+
   pull_request:
     branches:
       - main
-      - dev
 
 jobs:
   build-deploy:
-    name: Run test
-    runs-on: unbuntu-latest
+    name: Compilation
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout-code
         uses: actions/checkout@v4
@@ -22,13 +19,14 @@ jobs:
         with:
           node-version: 21
       
-      - name: Install des dépendances
+      - name: Install dependancises
         run: npm ci
-
       - run: npm build
 
       #run les test unitaire de notre code
       - run: npm test
 
-      #crée version exec du projet (Nom-projet-1.0.0.tgz)
-      - run: npm pack 
+      #crée version zip du projet (Nom-projet-1.0.0.tgz)
+      #- run: npm pack 
+
+      
