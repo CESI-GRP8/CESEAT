@@ -12,10 +12,11 @@ services:
       - account
 
   account:
-    container_name: account
     build:
       context: ./account
       dockerfile: Dockerfile
+    deploy:
+      replicas: 1
     networks:
       - account
   
