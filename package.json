@@ -1,0 +1,12 @@
+{
+  "name": "ceseat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "docker-compose up -d --build"
+    
+  },
+  "author": "",
+  "license": "ISC"
+}
