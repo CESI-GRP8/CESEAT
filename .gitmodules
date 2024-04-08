@@ -6,3 +6,7 @@
 	path = gateway
 	url = https://github.com/CESI-GRP8/gateway
 	branch = main
+[submodule "restaurant"]
+	path = restaurant
+	url = https://github.com/CESI-GRP8/restaurant.git
+	branch = main
