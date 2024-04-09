@@ -4,12 +4,14 @@ services:
     image: nginx:latest
     networks:
       - account
+      - payment
     ports:
       - 80:80
     volumes:
       - ./gateway/nginx.conf:/etc/nginx/nginx.conf
     depends_on:
       - account
+      - payment
 
   account:
     build:
@@ -30,6 +32,27 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: cesi
       MONGO_INITDB_ROOT_PASSWORD: cesi
+
+  payment:
+    build:
+      context: ./payment
+      dockerfile: Dockerfile
+    deploy:
+      replicas: 1
+    networks:
+      - payment
+  
+  payment-db:
+    container_name: payment-db
+    image: mongo:latest
+    networks:
+      - payment
+    volumes:
+      - ./payment/data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: cesi
+      MONGO_INITDB_ROOT_PASSWORD: cesi
       
 networks:
   account:
+  payment:
