@@ -18,3 +18,7 @@
 	path = payment
 	url = https://github.com/CESI-GRP8/payment
 	branch = main
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/CESI-GRP8/frontend.git
+	branch = main

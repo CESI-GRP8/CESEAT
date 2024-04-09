@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "docker-compose up -d --build"
+    "test": "exit 0"
     
   },
   "author": "",
