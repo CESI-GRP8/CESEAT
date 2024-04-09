@@ -1,7 +1,3 @@
-[submodule "authentication"]
-	path = authentication
-	url = https://github.com/CESI-GRP8/authentication
-	branch = main
 [submodule "gateway"]
 	path = gateway
 	url = https://github.com/CESI-GRP8/gateway
@@ -13,4 +9,8 @@
 [submodule "order"]
 	path = order
 	url = https://github.com/CESI-GRP8/order.git
+  branch = main
+[submodule "account"]
+	path = account
+	url = https://github.com/CESI-GRP8/account
 	branch = main
