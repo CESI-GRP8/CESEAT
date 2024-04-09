@@ -6,3 +6,7 @@
 	path = account
 	url = https://github.com/CESI-GRP8/account
 	branch = main
+[submodule "payment"]
+	path = payment
+	url = https://github.com/CESI-GRP8/payment
+	branch = main
