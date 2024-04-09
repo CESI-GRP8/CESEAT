@@ -10,3 +10,7 @@
 	path = restaurant
 	url = https://github.com/CESI-GRP8/restaurant.git
 	branch = main
+[submodule "order"]
+	path = order
+	url = https://github.com/CESI-GRP8/order.git
+	branch = main
