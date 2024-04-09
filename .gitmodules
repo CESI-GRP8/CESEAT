@@ -2,6 +2,14 @@
 	path = gateway
 	url = https://github.com/CESI-GRP8/gateway
 	branch = main
+[submodule "restaurant"]
+	path = restaurant
+	url = https://github.com/CESI-GRP8/restaurant.git
+	branch = main
+[submodule "order"]
+	path = order
+	url = https://github.com/CESI-GRP8/order.git
+  branch = main
 [submodule "account"]
 	path = account
 	url = https://github.com/CESI-GRP8/account
