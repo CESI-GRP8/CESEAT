@@ -33,6 +33,46 @@ services:
       MONGO_INITDB_ROOT_USERNAME: cesi
       MONGO_INITDB_ROOT_PASSWORD: cesi
 
+  restaurant:
+    build:
+      context: ./restaurant
+      dockerfile: Dockerfile
+    deploy:
+      replicas: 1
+    networks:
+      - restaurant
+  
+  restaurant-db:
+    container_name: restaurant-db
+    image: mongo:latest
+    networks:
+      - restaurant
+    volumes:
+      - ./restaurant/data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: cesi
+      MONGO_INITDB_ROOT_PASSWORD: cesi
+
+  order:
+    build:
+      context: ./order
+      dockerfile: Dockerfile
+    deploy:
+      replicas: 1
+    networks:
+      - order
+  
+  order-db:
+    container_name: order-db
+    image: mongo:latest
+    networks:
+      - order
+    volumes:
+      - ./order/data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: cesi
+      MONGO_INITDB_ROOT_PASSWORD: cesi
+
   payment:
     build:
       context: ./payment
@@ -55,4 +95,6 @@ services:
       
 networks:
   account:
+  restaurant:
+  order:
   payment:
